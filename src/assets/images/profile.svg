@@ -1,0 +1,20 @@
+<svg width="480" height="480" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Profile placeholder">
+  <defs>
+    <radialGradient id="g0" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(240 240) rotate(90) scale(240)">
+      <stop stop-color="#36D1FF" stop-opacity="0.9"/>
+      <stop offset="0.55" stop-color="#1B4DFF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#0B1020" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="g1" x1="84" y1="72" x2="396" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1633"/>
+      <stop offset="1" stop-color="#070A14"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="480" height="480" rx="240" fill="url(#g1)"/>
+  <circle cx="240" cy="240" r="210" fill="url(#g0)"/>
+  <circle cx="240" cy="196" r="74" fill="#0D1B3D" stroke="#48E6FF" stroke-opacity="0.55" stroke-width="2"/>
+  <path d="M100 406c26-62 82-104 140-104s114 42 140 104" fill="#0D1B3D" stroke="#48E6FF" stroke-opacity="0.55" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="240" cy="240" r="228" stroke="#48E6FF" stroke-opacity="0.25" stroke-width="4"/>
+  <circle cx="240" cy="240" r="236" stroke="#48E6FF" stroke-opacity="0.12" stroke-width="8"/>
+</svg>
+

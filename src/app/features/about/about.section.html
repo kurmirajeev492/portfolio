@@ -1,0 +1,29 @@
+<section id="about" class="section">
+  <div class="container">
+    <header class="section__header" appReveal>
+      <div class="section__kicker">About</div>
+      <h2 class="section__title">{{ about()?.title ?? 'About' }}</h2>
+      <p class="section__subtitle">{{ about()?.subtitle }}</p>
+    </header>
+
+    <div class="about__card glass" appReveal [appRevealDelay]="120">
+      <div class="about__avatar">
+        <img
+          [ngSrc]="person()?.profileImage ?? 'assets/images/profile.svg'"
+          width="480"
+          height="480"
+          alt="Profile"
+        />
+      </div>
+      <div class="about__content">
+        <p class="about__text">{{ about()?.description }}</p>
+        <div class="about__highlights">
+          @for (t of about()?.tags ?? []; track t) {
+            <div class="about__pill">{{ t }}</div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

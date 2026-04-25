@@ -1,0 +1,110 @@
+.timeline {
+  position: relative;
+  padding: 14px 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, transparent 0%, rgba(72, 230, 255, 0.35) 20%, rgba(27, 77, 255, 0.22) 80%, transparent 100%);
+}
+
+.timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 28px 1fr;
+  align-items: start;
+  margin: 18px 0;
+}
+
+.timeline__item--right .timeline__card {
+  grid-column: 3;
+}
+
+.timeline__item:not(.timeline__item--right) .timeline__card {
+  grid-column: 1;
+}
+
+.timeline__dot {
+  grid-column: 2;
+  justify-self: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, rgba(124, 242, 255, 1), rgba(72, 230, 255, 0.6));
+  box-shadow: 0 0 0 6px rgba(72, 230, 255, 0.08), 0 0 20px rgba(72, 230, 255, 0.25);
+  margin-top: 22px;
+}
+
+.timeline__card {
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.timeline__card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 70%, transparent);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 0 18px rgba(72, 230, 255, 0.1);
+}
+
+.timeline__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.timeline__role {
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  font-family: var(--font-display);
+}
+
+.timeline__range {
+  font-size: 13px;
+  color: color-mix(in srgb, var(--text) 62%, transparent);
+  font-weight: 800;
+}
+
+.timeline__org {
+  margin-top: 8px;
+  color: color-mix(in srgb, var(--text) 75%, transparent);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.timeline__list {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.timeline__list li {
+  margin: 6px 0;
+}
+
+@media (max-width: 900px) {
+  .timeline::before {
+    left: 8px;
+    transform: none;
+  }
+  .timeline__item {
+    grid-template-columns: 16px 1fr;
+    grid-template-areas: "dot card";
+  }
+  .timeline__dot {
+    grid-column: 1;
+    margin-top: 22px;
+  }
+  .timeline__card {
+    grid-column: 2 !important;
+  }
+}
+

@@ -1,0 +1,69 @@
+<section id="contact" class="section">
+  <div class="container">
+    <header class="section__header" appReveal>
+      <div class="section__kicker">Contact</div>
+      <h2 class="section__title">{{ contact()?.title ?? 'Contact' }}</h2>
+      <p class="section__subtitle">{{ contact()?.cta }}</p>
+    </header>
+
+    <div class="contact__grid">
+      <div class="contact__card glass" appReveal>
+        <div class="contact__infoTitle">Let’s build something premium.</div>
+        <div class="contact__infoRow">
+          <span class="contact__icon"><app-icon name="mail"></app-icon></span>
+          <a class="contact__link" [href]="'mailto:' + (contact()?.email ?? '')">{{ contact()?.email }}</a>
+        </div>
+        @if (contact()?.phone) {
+          <div class="contact__infoRow">
+            <span class="contact__icon"><app-icon name="phone"></app-icon></span>
+            <span class="contact__muted">{{ contact()?.phone }}</span>
+          </div>
+        }
+        <div class="contact__note">
+          Prefer email? Use the form and it will open your mail client with everything pre-filled.
+        </div>
+      </div>
+
+      <form class="contact__form glass" [formGroup]="form" (ngSubmit)="submit()" appReveal [appRevealDelay]="120">
+        <div class="field">
+          <label class="field__label">Full Name</label>
+          <input class="field__control" type="text" formControlName="name" placeholder="Your name" />
+          @if (form.controls.name.touched && form.controls.name.invalid) {
+            <div class="field__error">Please enter your name.</div>
+          }
+        </div>
+
+        <div class="field">
+          <label class="field__label">Email Address</label>
+          <input class="field__control" type="email" formControlName="email" placeholder="you@example.com" />
+          @if (form.controls.email.touched && form.controls.email.invalid) {
+            <div class="field__error">Please enter a valid email.</div>
+          }
+        </div>
+
+        <div class="field">
+          <label class="field__label">Subject</label>
+          <input class="field__control" type="text" formControlName="subject" placeholder="Project inquiry" />
+        </div>
+
+        <div class="field field--full">
+          <label class="field__label">Message</label>
+          <textarea class="field__control field__control--area" rows="5" formControlName="message" placeholder="Tell me about your goals, timeline, and stack…"></textarea>
+          @if (form.controls.message.touched && form.controls.message.invalid) {
+            <div class="field__error">Message should be at least 10 characters.</div>
+          }
+        </div>
+
+        <div class="contact__bottom">
+          <button class="btn btn--primary" type="submit" [disabled]="submitting()">
+            @if (!submitting()) { Submit } @else { Sending… }
+          </button>
+          @if (sent()) {
+            <span class="contact__sent">Ready — your email draft is open.</span>
+          }
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,25 @@
+<svg width="1200" height="750" viewBox="0 0 1200 750" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Project cover">
+  <defs>
+    <linearGradient id="bg" x1="90" y1="60" x2="1110" y2="730" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06122A"/>
+      <stop offset="1" stop-color="#04050E"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(860 280) rotate(90) scale(320 420)">
+      <stop stop-color="#1B4DFF" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#1B4DFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="750" rx="36" fill="url(#bg)"/>
+  <circle cx="860" cy="280" r="320" fill="url(#glow)"/>
+  <rect x="110" y="120" width="980" height="520" rx="26" fill="#0B1633" stroke="#48E6FF" stroke-opacity="0.2"/>
+  <rect x="150" y="170" width="360" height="22" rx="11" fill="#FFFFFF" fill-opacity="0.12"/>
+  <rect x="150" y="210" width="520" height="16" rx="8" fill="#FFFFFF" fill-opacity="0.08"/>
+  <rect x="150" y="242" width="470" height="16" rx="8" fill="#FFFFFF" fill-opacity="0.08"/>
+  <rect x="150" y="310" width="900" height="280" rx="18" fill="#071028" stroke="#48E6FF" stroke-opacity="0.15"/>
+  <rect x="190" y="350" width="300" height="200" rx="16" fill="#0D1B3D" stroke="#36D1FF" stroke-opacity="0.18"/>
+  <rect x="520" y="350" width="500" height="18" rx="9" fill="#36D1FF" fill-opacity="0.22"/>
+  <rect x="520" y="384" width="440" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.08"/>
+  <rect x="520" y="412" width="410" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.08"/>
+  <rect x="520" y="440" width="360" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.08"/>
+</svg>
+

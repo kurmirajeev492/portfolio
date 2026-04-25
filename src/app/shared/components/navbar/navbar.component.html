@@ -1,0 +1,27 @@
+<header class="nav" [class.nav--scrolled]="scrolled()">
+  <div class="nav__inner">
+    <button class="nav__brand" type="button" (click)="scrollTo('home')" aria-label="Go to top">
+      <span class="nav__dot" aria-hidden="true"></span>
+      <span class="nav__brandText">{{ brand() }}</span>
+    </button>
+
+    <nav class="nav__links" aria-label="Primary">
+      @for (item of nav(); track item.id) {
+        <button
+          type="button"
+          class="nav__link"
+          [ngClass]="{ 'is-active': activeId() === item.id }"
+          (click)="scrollTo(item.id)"
+        >
+          <span class="nav__label">{{ item.label }}</span>
+          <span class="nav__underline" aria-hidden="true"></span>
+        </button>
+      }
+    </nav>
+
+    <div class="nav__actions">
+      <button class="nav__cta" type="button" (click)="scrollTo('contact')">Let’s talk</button>
+    </div>
+  </div>
+</header>
+

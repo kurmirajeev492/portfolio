@@ -1,0 +1,126 @@
+{
+  "meta": {
+    "siteTitle": "Rajeev Kurmi | Portfolio",
+    "description": "UI/UX Developer (Angular Developer) — modern Angular portfolio with premium UI and animations."
+  },
+  "person": {
+    "name": "Rajeev Kurmi",
+    "headline": "UI/UX Developer (Angular Developer)",
+    "typingRoles": ["UI/UX Developer", "Angular Developer"],
+    "location": "Sagar, Madhya Pradesh, India",
+    "summary": "Passionate frontend developer building modern, scalable and animated UI experiences.",
+    "heroImage": "assets/images/profile-hero.jpg",
+    "profileImage": "assets/images/profile.jpg",
+    "resumeUrl": "assets/resume/Rajeev_Professional_cv.pdf"
+  },
+  "social": [
+    { "label": "GitHub", "icon": "github", "url": "https://github.com/" },
+    { "label": "LinkedIn", "icon": "linkedin", "url": "https://www.linkedin.com/" }
+  ],
+  "nav": [
+    { "id": "home", "label": "Home" },
+    { "id": "about", "label": "About" },
+    { "id": "skills", "label": "Skills" },
+    { "id": "experience", "label": "Experience" },
+    { "id": "projects", "label": "Projects" },
+    { "id": "contact", "label": "Contact" }
+  ],
+  "about": {
+    "title": "About Me",
+    "subtitle": "UI/UX-focused Angular developer building dashboard-grade applications.",
+    "description": "I craft premium, accessible web experiences using Angular, scalable architecture, and a product-first UI/UX mindset. I specialize in building dashboard-style applications including ITSM systems, data-heavy UIs, and reusable component-based architectures.",
+    "tags": ["Angular Expert", "ITSM Dashboard", "UI/UX Design", "Clean Architecture"]
+  },
+  "skills": {
+    "coding": [
+      { "name": "Angular", "level": 92 },
+      { "name": "TypeScript", "level": 90 },
+      { "name": "SCSS", "level": 88 },
+      { "name": "JavaScript", "level": 90 },
+      { "name": "HTML/CSS", "level": 92 },
+      { "name": "RxJS", "level": 80 }
+    ],
+    "professional": [
+      { "name": "UI/UX Design", "level": 88 },
+      { "name": "Communication", "level": 86 },
+      { "name": "Problem Solving", "level": 90 },
+      { "name": "Leadership", "level": 78 },
+      { "name": "Team Collaboration", "level": 85 }
+    ]
+  },
+  "experience": [
+    {
+      "title": "UI/UX Developer",
+      "company": "Visionwaves",
+      "location": "India",
+      "start": "Feb 2025",
+      "end": "Present",
+      "highlights": [
+        "Built ITSM-style dashboard for telecom site rollout tracking",
+        "Developed reusable Angular components (tooltip, menus, status pills)",
+        "Used ag-Grid for large dataset visualization",
+        "Integrated REST APIs for real-time updates",
+        "Designed KPI cards, filters, and dashboard UI"
+      ]
+    },
+    {
+      "title": "B.Tech CSE",
+      "company": "Babulal Tarabai Institute of Research and Technology",
+      "location": "India",
+      "start": "2021",
+      "end": "2025",
+      "highlights": [
+        "Computer Science & Engineering"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "ITSM Dashboard",
+      "description": "Dashboard for incident/task tracking with KPI cards, filters, ag-Grid, and real-time API integration.",
+      "image": "assets/images/projects/project-1.svg",
+      "tags": ["Angular", "UI/UX", "ag-Grid", "Dashboard"],
+      "links": [
+        { "label": "Live", "url": "#" },
+        { "label": "Code", "url": "#" }
+      ]
+    },
+    {
+      "title": "Site Rollout Dashboard",
+      "description": "Telecom dashboard with charts and tables for site rollout tracking and performance insights.",
+      "image": "assets/images/projects/project-2.svg",
+      "tags": ["Angular", "Charts", "Tables", "Telemetry"],
+      "links": [
+        { "label": "Live", "url": "#" },
+        { "label": "Code", "url": "#" }
+      ]
+    },
+    {
+      "title": "E-commerce Website",
+      "description": "E-commerce experience with product listing, cart, and checkout flow.",
+      "image": "assets/images/projects/project-3.svg",
+      "tags": ["UI", "Responsive", "Checkout"],
+      "links": [
+        { "label": "Live", "url": "#" },
+        { "label": "Code", "url": "#" }
+      ]
+    },
+    {
+      "title": "Document Management System",
+      "description": "Role-based document system with secure access and organized workflows.",
+      "image": "assets/images/projects/project-2.svg",
+      "tags": ["RBAC", "Angular", "Enterprise UI"],
+      "links": [
+        { "label": "Live", "url": "#" },
+        { "label": "Code", "url": "#" }
+      ]
+    }
+  ],
+  "contact": {
+    "title": "Contact Me!",
+    "email": "rajeevkurmi492@gmail.com",
+    "phone": "9302068492",
+    "cta": "Tell me about your project — I usually reply within 24 hours."
+  }
+}
+

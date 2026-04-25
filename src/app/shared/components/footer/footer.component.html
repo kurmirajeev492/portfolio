@@ -1,0 +1,21 @@
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__left">
+      <div class="footer__brand">
+        <span class="footer__dot" aria-hidden="true"></span>
+        <span class="footer__name">{{ person()?.name ?? 'Portfolio' }}</span>
+      </div>
+      <div class="footer__meta">© {{ year() }} · Built with Angular</div>
+    </div>
+
+    <div class="footer__right" aria-label="Social links">
+      @for (s of social(); track s.label) {
+        <a class="footer__icon" [href]="s.url" target="_blank" rel="noopener">
+          <app-icon [name]="s.icon"></app-icon>
+          <span class="srOnly">{{ s.label }}</span>
+        </a>
+      }
+    </div>
+  </div>
+</footer>
+

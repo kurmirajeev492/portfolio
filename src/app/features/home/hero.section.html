@@ -1,0 +1,52 @@
+<section id="home" class="hero section">
+  <div class="container hero__grid">
+    <div class="hero__left" appReveal>
+      <div class="hero__badge">
+        <span class="hero__pulse" aria-hidden="true"></span>
+        <span>{{ person()?.location ?? 'Available for projects' }}</span>
+      </div>
+
+      <h1 class="hero__title">
+        Hi, I’m <span class="hero__name">{{ person()?.name ?? '—' }}</span>
+      </h1>
+
+      <div class="hero__role">
+        <span class="hero__roleLabel">I build</span>
+        <app-typing [items]="person()?.typingRoles ?? []" />
+      </div>
+
+      <p class="hero__copy">
+        {{ person()?.summary ?? '' }}
+      </p>
+
+      <div class="hero__actions">
+        <button class="btn btn--primary" type="button" (click)="scrollTo('contact')">Hire Me</button>
+        <button class="btn" type="button" (click)="scrollTo('contact')">Contact</button>
+      </div>
+
+      <div class="hero__social" aria-label="Social links">
+        @for (s of social(); track s.label) {
+          <a class="hero__socialBtn" [href]="s.url" target="_blank" rel="noopener">
+            <app-icon [name]="s.icon"></app-icon>
+            <span class="srOnly">{{ s.label }}</span>
+          </a>
+        }
+      </div>
+    </div>
+
+    <div class="hero__right" appReveal [appRevealDelay]="120">
+      <div class="hero__portrait glass">
+        <div class="hero__glow" aria-hidden="true"></div>
+        <img
+          [ngSrc]="person()?.heroImage ?? person()?.profileImage ?? 'assets/images/profile.svg'"
+          width="480"
+          height="480"
+          priority
+          alt="Profile"
+        />
+        <div class="hero__ring" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
+

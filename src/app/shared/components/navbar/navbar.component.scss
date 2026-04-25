@@ -1,0 +1,158 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 14px 0;
+  backdrop-filter: blur(10px);
+  transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.nav--scrolled {
+  background: color-mix(in srgb, var(--glass-bg) 72%, transparent);
+  border-bottom-color: color-mix(in srgb, var(--glass-border) 65%, transparent);
+}
+
+.nav__inner {
+  width: min(1140px, calc(100% - 28px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav__brand {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 0;
+  color: var(--text);
+  cursor: pointer;
+  padding: 10px 10px 10px 0;
+}
+
+.nav__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #7cf2ff 0%, #2a7cff 40%, transparent 70%);
+  box-shadow: 0 0 18px rgba(72, 230, 255, 0.45);
+}
+
+.nav__brandText {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-size: 14px;
+  opacity: 0.95;
+}
+
+.nav__links {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--glass-bg) 50%, transparent);
+  border: 1px solid color-mix(in srgb, var(--glass-border) 55%, transparent);
+  box-shadow: var(--shadow-glass);
+}
+
+.nav__link {
+  position: relative;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: color-mix(in srgb, var(--text) 80%, transparent);
+  cursor: pointer;
+  padding: 10px 12px;
+  border-radius: 999px;
+  transition: color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+
+.nav__link:hover {
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+  transform: translateY(-1px);
+}
+
+.nav__label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.nav__underline {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 7px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent 0%, rgba(72, 230, 255, 0.9) 50%, transparent 100%);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.nav__link.is-active {
+  color: var(--text);
+}
+
+.nav__link.is-active .nav__underline {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav__actions {
+  justify-self: end;
+}
+
+.nav__cta {
+  border: 1px solid color-mix(in srgb, var(--glass-border) 70%, transparent);
+  background: linear-gradient(180deg, rgba(72, 230, 255, 0.22), rgba(27, 77, 255, 0.08));
+  color: var(--text);
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.nav__cta:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--accent) 75%, transparent);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45), 0 0 22px rgba(72, 230, 255, 0.15);
+}
+
+@media (max-width: 900px) {
+  .nav__inner {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "brand actions"
+      "links links";
+  }
+  .nav__brand {
+    grid-area: brand;
+  }
+  .nav__actions {
+    grid-area: actions;
+  }
+  .nav__links {
+    grid-area: links;
+    justify-self: stretch;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+  .nav__links::-webkit-scrollbar {
+    display: none;
+  }
+}
+

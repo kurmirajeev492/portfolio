@@ -1,0 +1,38 @@
+<section id="projects" class="section">
+  <div class="container">
+    <header class="section__header" appReveal>
+      <div class="section__kicker">Projects</div>
+      <h2 class="section__title">Featured Projects</h2>
+      <p class="section__subtitle">Selected work focused on premium UI, motion, and clean, scalable code.</p>
+    </header>
+
+    <div class="projects__grid">
+      @for (p of projects(); track p.title) {
+        <article class="project glass" appReveal appTilt>
+          <div class="project__media">
+            <img [ngSrc]="p.image" width="1200" height="750" alt="Project cover" />
+            <div class="project__overlay" aria-hidden="true"></div>
+            <div class="project__actions">
+              @for (l of p.links; track l.label) {
+                <a class="project__btn" [href]="l.url" target="_blank" rel="noopener">{{ l.label }}</a>
+              }
+            </div>
+          </div>
+
+          <div class="project__body">
+            <div class="project__titleRow">
+              <h3 class="project__title">{{ p.title }}</h3>
+              <div class="project__tags">
+                @for (t of p.tags; track t) {
+                  <span class="project__tag">{{ t }}</span>
+                }
+              </div>
+            </div>
+            <p class="project__desc">{{ p.description }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+

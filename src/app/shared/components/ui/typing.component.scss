@@ -1,0 +1,29 @@
+.typing {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.typing__text {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, rgba(72, 230, 255, 1), rgba(27, 77, 255, 0.95));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.typing__cursor {
+  width: 10px;
+  height: 18px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--accent) 90%, white);
+  opacity: 0.15;
+  transition: opacity 0.15s ease;
+  box-shadow: 0 0 18px rgba(72, 230, 255, 0.25);
+}
+
+.typing__cursor.is-on {
+  opacity: 0.9;
+}
+

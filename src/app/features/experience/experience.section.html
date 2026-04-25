@@ -1,0 +1,35 @@
+<section id="experience" class="section">
+  <div class="container">
+    <header class="section__header" appReveal>
+      <div class="section__kicker">Journey</div>
+      <h2 class="section__title">My Journey</h2>
+      <p class="section__subtitle">A timeline of roles and the impact delivered along the way.</p>
+    </header>
+
+    <div class="timeline">
+      @for (item of experience(); track item.title + item.company; let i = $index) {
+        <article
+          class="timeline__item"
+          [class.timeline__item--right]="i % 2 === 1"
+          appReveal
+          [appRevealDelay]="80 + i * 90"
+        >
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__card glass">
+            <div class="timeline__top">
+              <div class="timeline__role">{{ item.title }}</div>
+              <div class="timeline__range">{{ item.start }} — {{ item.end }}</div>
+            </div>
+            <div class="timeline__org">{{ item.company }} · {{ item.location }}</div>
+            <ul class="timeline__list">
+              @for (h of item.highlights; track h) {
+                <li>{{ h }}</li>
+              }
+            </ul>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+

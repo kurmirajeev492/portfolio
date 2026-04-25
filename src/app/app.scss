@@ -1,0 +1,10 @@
+::ng-deep :root {
+  color-scheme: dark;
+}
+
+.app {
+  position: relative;
+  min-height: 100dvh;
+  isolation: isolate;
+}
+

@@ -1,0 +1,46 @@
+<section id="skills" class="section">
+  <div class="container">
+    <header class="section__header" appReveal>
+      <div class="section__kicker">Skills</div>
+      <h2 class="section__title">My Skills</h2>
+      <p class="section__subtitle">A balanced mix of engineering depth and product-focused UI/UX craft.</p>
+    </header>
+
+    <div class="skills__grid">
+      <div class="skills__col glass" appReveal>
+        <div class="skills__heading">Coding Skills</div>
+        <div class="skills__list">
+          @for (s of skills()?.coding ?? []; track s.name) {
+            <div class="skill">
+              <div class="skill__top">
+                <div class="skill__name">{{ s.name }}</div>
+                <div class="skill__pct">{{ s.level }}%</div>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__fill" [style.--p]="s.level"></div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="skills__col glass" appReveal [appRevealDelay]="120">
+        <div class="skills__heading">Professional Skills</div>
+        <div class="skills__list">
+          @for (s of skills()?.professional ?? []; track s.name) {
+            <div class="skill">
+              <div class="skill__top">
+                <div class="skill__name">{{ s.name }}</div>
+                <div class="skill__pct">{{ s.level }}%</div>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__fill skill__fill--alt" [style.--p]="s.level"></div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
