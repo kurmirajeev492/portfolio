@@ -20,6 +20,13 @@
     </nav>
 
     <div class="nav__actions">
+      <button class="nav__visitors" type="button" [attr.title]="visitorTitle()" aria-label="Visitor count">
+        <span class="nav__visIcon" aria-hidden="true">
+          <app-icon name="eye"></app-icon>
+        </span>
+        <span class="srOnly">{{ visitorTitle() }}</span>
+        <span class="nav__tooltip" aria-hidden="true">{{ visitorTitle() }}</span>
+      </button>
       <button class="nav__cta" type="button" (click)="scrollTo('contact')">Let’s talk</button>
     </div>
   </div>

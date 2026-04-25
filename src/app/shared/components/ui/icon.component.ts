@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 
-type IconName = 'github' | 'linkedin' | 'x' | 'dribbble' | 'mail' | 'phone';
+type IconName = 'github' | 'linkedin' | 'x' | 'dribbble' | 'mail' | 'phone' | 'eye';
 
 @Component({
   selector: 'app-icon',

@@ -9,19 +9,28 @@ import {
 } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { PortfolioStore } from '../../../core/services/portfolio-store.service';
+import { VisitorService } from '../../../core/services/visitor.service';
+import { IconComponent } from '../ui/icon.component';
 
 @Component({
   selector: 'app-navbar',
-  imports: [NgClass],
+  imports: [NgClass, IconComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavbarComponent {
   private readonly store = inject(PortfolioStore);
+  private readonly visitors = inject(VisitorService);
 
   readonly nav = this.store.nav;
   readonly person = this.store.person;
+  readonly visitorCount = this.visitors.count;
+  readonly visitorTitle = computed(() => {
+    const v = this.visitorCount();
+    if (v == null) return 'Visitors';
+    return `Visitors: ${new Intl.NumberFormat(undefined).format(v)}`;
+  });
 
   readonly scrolled = signal(false);
   readonly activeId = signal<string>('home');
