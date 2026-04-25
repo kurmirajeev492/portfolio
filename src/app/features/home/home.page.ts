@@ -18,7 +18,7 @@ export class HomePage implements OnInit {
   private readonly visitors = inject(VisitorService);
 
   ngOnInit(): void {
-    void this.visitors.hitAndGetCount();
+    void this.visitors.hitOnLoadOnce();
   }
 }
 

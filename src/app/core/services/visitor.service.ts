@@ -7,8 +7,18 @@ export class VisitorService {
   readonly count = signal<number | null>(null);
   readonly status = signal<'idle' | 'loading' | 'ready' | 'error'>('idle');
 
-  private readonly endpoint = 'https://portfolio-rajeevkurmi.netlify.app/';
+  private readonly endpoint = 'https://api.countapi.xyz/hit/rajeev-portfolio-2026/visits';
+  private hitOncePromise: Promise<number | null> | null = null;
   private readonly timeoutMs = 6500;
+
+  /**
+   * Ensures we only increment once on initial page open,
+   * even if multiple components request the count.
+   */
+  hitOnLoadOnce(): Promise<number | null> {
+    if (!this.hitOncePromise) this.hitOncePromise = this.hitAndGetCount();
+    return this.hitOncePromise;
+  }
 
   async hitAndGetCount(): Promise<number | null> {
     this.status.set('loading');

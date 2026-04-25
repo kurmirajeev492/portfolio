@@ -40,6 +40,7 @@ export class NavbarComponent {
   private io: IntersectionObserver | null = null;
 
   constructor() {
+    void this.visitors.hitOnLoadOnce();
     effect(() => {
       const items = this.nav();
       queueMicrotask(() => this.setupScrollSpy(items.map((x) => x.id)));
